@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Bullet
+  - Enemy
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - Background
+  - Water
+  - UI
+  - Bordes
+  - Decoraciones
+  - Player
+  - techos
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: Fondo
+    uniqueID: 3059192131
+    locked: 0
+  - name: Enemies
+    uniqueID: 1961719323
+    locked: 0
+  - name: Player
+    uniqueID: 2437634741
+    locked: 0
+  - name: Objetos
+    uniqueID: 3523540151
+    locked: 0
+  - name: Techos
+    uniqueID: 2938605441
+    locked: 0
+  - name: Helicoptero
+    uniqueID: 1966583929
+    locked: 0
