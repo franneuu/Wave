@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3635229432461527304}
   - component: {fileID: 7821457358795445278}
   - component: {fileID: 8151011737453091455}
+  - component: {fileID: -2450224086267224893}
   m_Layer: 0
   m_Name: Bala
   m_TagString: Bullet
@@ -100,6 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootSpeed: 10
   playerController: {fileID: 8557963393061588197, guid: 505f698b1535fea4fa20757ccad5a9c1, type: 3}
+  shootDamage: 10
 --- !u!50 &8151011737453091455
 Rigidbody2D:
   serializedVersion: 4
@@ -127,3 +129,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!58 &-2450224086267224893
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5579157689403924080}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5

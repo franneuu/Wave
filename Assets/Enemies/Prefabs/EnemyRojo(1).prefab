@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 246058445603208882}
   - component: {fileID: 4418013724932908847}
   - component: {fileID: -8369620982676145357}
+  - component: {fileID: 4945190635543902863}
+  - component: {fileID: 7069239235803778229}
   m_Layer: 0
   m_Name: EnemyRojo(1)
   m_TagString: Enemy
@@ -167,8 +169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: rojo
-  speed: 1
-  minRange: 1
 --- !u!50 &-8369620982676145357
 Rigidbody2D:
   serializedVersion: 4
@@ -196,3 +196,33 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &4945190635543902863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246058445603208886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d79501e8288a84583af2c1bebb1640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  minRange: 0.5
+--- !u!114 &7069239235803778229
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246058445603208886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c9db92669dfc048a9713e518ae4ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  flashLength: 1
+  flashCounter: 1

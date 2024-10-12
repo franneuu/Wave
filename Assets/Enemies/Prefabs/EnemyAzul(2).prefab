@@ -13,7 +13,9 @@ GameObject:
   - component: {fileID: 4091011771918854817}
   - component: {fileID: 4091011771918854818}
   - component: {fileID: 3743201260456856485}
+  - component: {fileID: -3263823421072929279}
   - component: {fileID: -2210306262827673828}
+  - component: {fileID: 350264863559526827}
   m_Layer: 0
   m_Name: EnemyAzul(2)
   m_TagString: Enemy
@@ -167,6 +169,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   id: azul
+--- !u!114 &-3263823421072929279
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091011771918854822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71d79501e8288a84583af2c1bebb1640, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 1
+  minRange: 0.5
 --- !u!50 &-2210306262827673828
 Rigidbody2D:
   serializedVersion: 4
@@ -194,3 +210,19 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &350264863559526827
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4091011771918854822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9c9db92669dfc048a9713e518ae4ae9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 40
+  currentHealth: 0
+  flashLength: 1
+  flashCounter: 1

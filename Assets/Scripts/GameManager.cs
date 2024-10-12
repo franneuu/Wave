@@ -4,15 +4,24 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static GameManager instance;
+    public PlayerController player;
+    public Enemy enemy;
+    public PlayerHealth playerHealth;
     void Start()
     {
-        
-    }
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        player = FindObjectOfType<PlayerController>();
+        enemy = FindObjectOfType<Enemy>();
+        playerHealth = FindObjectOfType<PlayerHealth>();
     }
 }

@@ -31298,6 +31298,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blueFactory: {fileID: 424604868}
   redFactory: {fileID: 404389950}
+  maxEnemies: 3
+  spawnInterval: 3
+  activeEnemies: 0
 --- !u!4 &1671314767
 Transform:
   m_ObjectHideFlags: 0
@@ -32195,8 +32198,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -1356361855
-  m_SortingLayer: 5
+  m_SortingLayerID: 1966583929
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 76b42ad0c7932a347a29107a6470fa62, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
