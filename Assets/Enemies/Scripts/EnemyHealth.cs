@@ -62,7 +62,6 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
-        //play hurt animation 
         flashActive = true;
         flashCounter = flashLength;
 

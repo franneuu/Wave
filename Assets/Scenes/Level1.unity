@@ -31300,7 +31300,7 @@ MonoBehaviour:
   redFactory: {fileID: 404389950}
   maxEnemies: 3
   spawnInterval: 3
-  activeEnemies: 0
+  spawnedEnemies: 0
 --- !u!4 &1671314767
 Transform:
   m_ObjectHideFlags: 0

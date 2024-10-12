@@ -9,7 +9,7 @@ public class AbstractFactory : MonoBehaviour
      
     public int maxEnemies = 3; 
     public float spawnInterval = 3f;
-    public int activeEnemies;
+    public int spawnedEnemies;
 
     private void Start()
     {
@@ -22,20 +22,20 @@ public class AbstractFactory : MonoBehaviour
     }
     private void SpawnEnemy()
     {
-        if (activeEnemies < maxEnemies)
+        if (spawnedEnemies < maxEnemies)
         {            
             if (Random.value > 0.5f)
             {
                 SpawnRed();
-                activeEnemies++;
+                spawnedEnemies++;
             }
             else
             {
                 SpawnBlue();
-                activeEnemies++;
+                spawnedEnemies++;
             }
         }
-        else if (activeEnemies > maxEnemies)
+        else if (spawnedEnemies > maxEnemies)
         {
             Debug.Log("No hay mas spawn");
         }
