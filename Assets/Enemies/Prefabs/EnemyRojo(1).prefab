@@ -222,7 +222,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9c9db92669dfc048a9713e518ae4ae9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 40
+  enemyAttributes: {fileID: 11400000, guid: c5e3a37c42b864a28a806d250b2513c0, type: 2}
   currentHealth: 0
-  flashLength: 1
-  flashCounter: 1

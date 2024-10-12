@@ -3,49 +3,47 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
-{
-    public int maxHealth = 40;
+{ 
+    [SerializeField] private EnemyScriptable enemyAttributes;
     public int currentHealth;
     private bool flashActive;
-    [SerializeField] private float flashLength = 0f;
-    [SerializeField] private float flashCounter = 0f;
     private SpriteRenderer enemySprite;
 
     // Start is called before the first frame update
     void Awake()
     {
-        currentHealth = maxHealth;
+        currentHealth = enemyAttributes.maxHealth;
         enemySprite = GetComponent<SpriteRenderer>();
     }
     void Update()
     {
         if (flashActive)
         {
-            if (flashCounter > flashLength * .99f)
+            if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .99f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
             }
-            else if (flashCounter > flashLength * .82f)
+            else if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .82f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
             }
-            else if (flashCounter > flashLength * .66f)
+            else if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .66f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
             }
-            else if (flashCounter > flashLength * .49f)
+            else if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .49f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
             }
-            else if (flashCounter > flashLength * .33f)
+            else if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .33f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
             }
-            else if (flashCounter > flashLength * .16f)
+            else if (enemyAttributes.flashCounter > enemyAttributes.flashLength * .16f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
             }
-            else if (flashCounter > 0f)
+            else if (enemyAttributes.flashCounter > 0f)
             {
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 0f);
             }
@@ -54,7 +52,7 @@ public class EnemyHealth : MonoBehaviour
                 enemySprite.color = new Color(enemySprite.color.r, enemySprite.color.g, enemySprite.color.b, 1f);
                 flashActive = false;
             }
-            flashCounter -= Time.deltaTime;
+            enemyAttributes.flashCounter -= Time.deltaTime;
         }
 
     }
@@ -63,7 +61,7 @@ public class EnemyHealth : MonoBehaviour
     {
         currentHealth -= damage;
         flashActive = true;
-        flashCounter = flashLength;
+        enemyAttributes.flashCounter = enemyAttributes.flashLength;
 
         if (currentHealth <= 0)
         {
