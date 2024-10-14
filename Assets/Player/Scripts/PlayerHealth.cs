@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+    public static PlayerHealth instance;
     public float currentHealth;
     public float maxHealth = 40;
-    private bool flashActive;
+    private bool flashActive;    
     [SerializeField] private float flashLength = 0f;
     [SerializeField] private float flashCounter = 0f;
     private SpriteRenderer playerSprite;
-    private void Awake()
+ 
+    private void Start()
     {
         currentHealth = maxHealth;
         playerSprite = GetComponent<SpriteRenderer>();
@@ -58,6 +60,7 @@ public class PlayerHealth : MonoBehaviour
     }
     public void TakeDamage(int damage)
     {
+        Debug.Log("recibiendo daño");
         currentHealth -= damage;
         flashActive = true;
         flashCounter = flashLength;
@@ -67,7 +70,6 @@ public class PlayerHealth : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
         Destroy(gameObject);

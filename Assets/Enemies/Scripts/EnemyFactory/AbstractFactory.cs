@@ -15,11 +15,6 @@ public class AbstractFactory : MonoBehaviour
     {
         InvokeRepeating("SpawnEnemy", 0f, spawnInterval); 
     }
-
-    private void Update()
-    {
-        
-    }
     private void SpawnEnemy()
     {
         if (spawnedEnemies < maxEnemies)

@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowState : MonoBehaviour, IState 
@@ -8,6 +10,7 @@ public class FollowState : MonoBehaviour, IState
     public FollowLogic FollowLogica => followLogic;
 
     private AttackingState attackingState;
+
     public FollowState (EnemyController enemy)
     {
         this.enemy = enemy;
@@ -24,9 +27,9 @@ public class FollowState : MonoBehaviour, IState
     {
         enemy.followLogic.FollowPlayer();        
 
-        if (enemy.followLogic.minRange >= enemy.followLogic.distance)
+        if (enemy.followAttributes.minRange >= enemy.followLogic.distance)
         {
-            enemy.StateMachine.TransitionTo(enemy.StateMachine.attackingState);
+            enemy.StateMachine.TransitionTo(enemy.StateMachine.attackingState);          
             enemy.animator.SetBool("isChasing", false);
         }
     }

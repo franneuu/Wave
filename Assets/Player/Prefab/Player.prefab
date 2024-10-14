@@ -10,14 +10,14 @@ GameObject:
   m_Component:
   - component: {fileID: 4814532946773356222}
   - component: {fileID: 2567525022962118995}
-  - component: {fileID: 8557963393061588197}
   - component: {fileID: 200354740100545393}
   - component: {fileID: 8879301232329169926}
   - component: {fileID: 2418102079800473257}
+  - component: {fileID: 8557963393061588197}
   - component: {fileID: -6294935201866422088}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -32,7 +32,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.6205, y: 0.6205, z: 0.6205}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1982168749881386915}
@@ -76,8 +76,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1857332555
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b6613fc31af342347885307db936212a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -90,22 +90,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8557963393061588197
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6026487595919185213}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dce206195d61ddb43bedeefab8a43aac, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  rb: {fileID: 200354740100545393}
-  moveSpeed: 5
-  animator: {fileID: 8879301232329169926}
-  firegun: {fileID: 1716196037341517034}
 --- !u!50 &200354740100545393
 Rigidbody2D:
   serializedVersion: 4
@@ -132,7 +116,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!95 &8879301232329169926
 Animator:
   serializedVersion: 5
@@ -189,6 +173,23 @@ CapsuleCollider2D:
   m_Offset: {x: -0.048983663, y: -0.20083071}
   m_Size: {x: 1.6679198, y: 1.3250524}
   m_Direction: 1
+--- !u!114 &8557963393061588197
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6026487595919185213}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dce206195d61ddb43bedeefab8a43aac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 200354740100545393}
+  moveSpeed: 5
+  animator: {fileID: 8879301232329169926}
+  firegun: {fileID: 1716196037341517034}
+  shootSound: {fileID: 8300000, guid: dcb059e8abce3c34c9aba563df572405, type: 3}
 --- !u!114 &-6294935201866422088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -204,7 +205,7 @@ MonoBehaviour:
   currentHealth: 0
   maxHealth: 40
   flashLength: 2
-  flashCounter: 0
+  flashCounter: 2
 --- !u!1001 &5704607214628215886
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -256,7 +257,7 @@ PrefabInstance:
     - target: {fileID: 6411983741230975140, guid: d823204fc2f44f5478326a9d963b2125, type: 3}
       propertyPath: firePoint
       value: 
-      objectReference: {fileID: 6100343331173497837, guid: d823204fc2f44f5478326a9d963b2125, type: 3}
+      objectReference: {fileID: 1982168749881386915}
     - target: {fileID: 6449526167105744307, guid: d823204fc2f44f5478326a9d963b2125, type: 3}
       propertyPath: m_Name
       value: FirePoint

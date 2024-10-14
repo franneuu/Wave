@@ -7,16 +7,15 @@ using UnityEngine.UIElements;
 
 public class Bullet : MonoBehaviour
 {
-    public int shootSpeed ;
+    public int shootSpeed;
     public ObjectPool<Bullet> bulletPool;
     public PlayerController playerController;
     private Vector2 direction;
-
     public int shootDamage;
 
     void Update()
     {
-        transform.Translate(direction * Time.deltaTime * shootSpeed);
+        transform.Translate(direction * Time.deltaTime * shootSpeed);        
     }
     public void SetDirection(Vector2 newDirection)
     {
@@ -38,11 +37,18 @@ public class Bullet : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         EnemyHealth enemy = collision.gameObject.GetComponent<EnemyHealth>();
+        HelicopterHealth chopper = collision.gameObject.GetComponent<HelicopterHealth>();
         if (collision.gameObject.tag == "Enemy")
         {
             if (enemy != null)
             {
                 enemy.TakeDamage(shootDamage);
+                CancelInvoke("Deactivate");
+                Deactivate();
+            }
+            else if (chopper != null)
+            {                
+                chopper.TakeDamage(shootDamage);
                 CancelInvoke("Deactivate");
                 Deactivate();
             }

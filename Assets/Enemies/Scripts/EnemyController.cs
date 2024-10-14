@@ -6,15 +6,15 @@ public class EnemyController : MonoBehaviour
 {
     private StateMachine stateMachine;
     public StateMachine StateMachine => stateMachine;
-
-    //private EnemyHealth enemyHealth;
-    //public EnemyHealth EnemyHealth => enemyHealth;  
+    [SerializeField] public FollowScriptable followAttributes;
+    [SerializeField] private int damage;
+    public bool isAttacking;
+    public float attackCoolDown = 1f;
+    private float currentTimeAttack;
 
     public FollowLogic followLogic;
 
     public Animator animator;
-
-    public bool isChasing;
 
     private void Awake()
     {
@@ -26,7 +26,37 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         stateMachine.UpdateState();
+        if (isAttacking)
+        {
+            currentTimeAttack += Time.deltaTime;
+            if (currentTimeAttack > attackCoolDown)
+            {
+                AttackPlayer();
+                currentTimeAttack = 0f;
+            }
+        }
     }
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isAttacking = true;
+            currentTimeAttack = 0;
+        }
+    }    
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {            
+            isAttacking = false;
+            currentTimeAttack = 0f;  
+        }
+    }
+    public void AttackPlayer()
+    {
+        GameManager.instance.playerHealth.TakeDamage(damage);        
+    }
+
 
 
 }
