@@ -12,7 +12,7 @@ public class FireGun : MonoBehaviour
 
     private void Awake()
     {
-        bulletPool = new ObjectPool<Bullet>(CreatePoolItem, OnTakeFromPool, OnReturnToPool, OnDestroyPoolObject, true, 1000);
+        bulletPool = new ObjectPool<Bullet>(CreatePoolItem, OnTakeFromPool, OnReturnToPool, OnDestroyPoolObject, false);
     }
     public void Shoot(Vector2 direction)
     {
@@ -30,14 +30,17 @@ public class FireGun : MonoBehaviour
     private void OnTakeFromPool(Bullet bullet)
     {
         bullet.gameObject.SetActive(true);
+        //Debug.Log("Bala activa");
     }
     private void OnReturnToPool(Bullet bullet)
     {
         bullet.ResetState();
         bullet.gameObject.SetActive(false);
+        //Debug.Log("Bala desactivada");
     }
     private void OnDestroyPoolObject(Bullet bullet)
     {
         Destroy(bullet.gameObject);
+        //Debug.Log("Destrui bala");
     }
 }

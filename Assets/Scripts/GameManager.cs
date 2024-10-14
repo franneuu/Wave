@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public PlayerController player;
-    public Enemy enemy;
+    public EnemyController enemy;
     public PlayerHealth playerHealth;
     void Start()
     {
@@ -21,7 +21,7 @@ public class GameManager : MonoBehaviour
         }
 
         player = FindObjectOfType<PlayerController>();
-        enemy = FindObjectOfType<Enemy>();
+        enemy = FindObjectOfType<EnemyController>();
         playerHealth = FindObjectOfType<PlayerHealth>();
     }
 }

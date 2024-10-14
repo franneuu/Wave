@@ -5,16 +5,11 @@ using UnityEngine;
 
 public class FollowLogic : MonoBehaviour
 {
-    private float distance;
+    private EnemyController enemy;
+    public float distance;
     public float speed;
     public float minRange;
-    private bool canAttack;
-
-    private void Update()
-    {
-        FollowPlayer();
-    }
-
+    private bool canAttack;  
     public void FollowPlayer()
     {
         if (PlayerController.instance != null)
@@ -32,8 +27,7 @@ public class FollowLogic : MonoBehaviour
             }
             else if (minRange > distance && canAttack == false)
             {
-                canAttack = true;
-                Invoke("Attack", 1);
+                canAttack = true;                
             }
         }
     }

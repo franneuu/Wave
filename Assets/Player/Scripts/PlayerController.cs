@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float moveSpeed;
     public Animator animator;
     public FireGun firegun;
+    public AudioClip shootSound;
 
     private void Awake()
     {
@@ -47,11 +48,12 @@ public class PlayerController : MonoBehaviour
         {
             Vector2 direction = transform.right;
             firegun.Shoot(direction);
+            AudioManager.instance.PlaySoundOneShot(shootSound);
         }
     }
     private void FixedUpdate()
     {
+        //rb.velocity = new Vector2(movement.x * moveSpeed, movement.y * moveSpeed);
         transform.Translate(movement * moveSpeed * Time.fixedDeltaTime, Space.World);
-
     }
 }

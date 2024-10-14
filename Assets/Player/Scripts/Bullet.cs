@@ -11,6 +11,7 @@ public class Bullet : MonoBehaviour
     public ObjectPool<Bullet> bulletPool;
     public PlayerController playerController;
     private Vector2 direction;
+
     public int shootDamage;
 
     void Update()
@@ -42,8 +43,9 @@ public class Bullet : MonoBehaviour
             if (enemy != null)
             {
                 enemy.TakeDamage(shootDamage);
+                CancelInvoke("Deactivate");
+                Deactivate();
             }
         }
-        bulletPool.Release(this);
     }    
 }

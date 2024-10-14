@@ -56,7 +56,6 @@ public class EnemyHealth : MonoBehaviour
         }
 
     }
-
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
@@ -68,11 +67,10 @@ public class EnemyHealth : MonoBehaviour
             Die();
         }
     }
-
     void Die()
     {
         Destroy(gameObject);
-        Debug.Log("Enemy died! " + currentHealth);
+        //Debug.Log("Enemy died! " + currentHealth);
     }
 }
 

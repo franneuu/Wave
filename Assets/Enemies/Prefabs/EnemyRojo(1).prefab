@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 246058445603208884}
   - component: {fileID: 246058445603208887}
   - component: {fileID: 246058445603208882}
-  - component: {fileID: 4418013724932908847}
   - component: {fileID: -8369620982676145357}
   - component: {fileID: 4945190635543902863}
   - component: {fileID: 7069239235803778229}
+  - component: {fileID: 5929232991639771286}
+  - component: {fileID: 7351130612927955779}
   m_Layer: 0
   m_Name: EnemyRojo(1)
   m_TagString: Enemy
@@ -156,19 +157,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1815586, y: 2.267102}
   m_EdgeRadius: 0
---- !u!114 &4418013724932908847
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 246058445603208886}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f0026b5c69ab9445837716eafc76ce0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: rojo
 --- !u!50 &-8369620982676145357
 Rigidbody2D:
   serializedVersion: 4
@@ -208,8 +196,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d79501e8288a84583af2c1bebb1640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  distance: 0
   speed: 1
-  minRange: 0.5
+  minRange: 1
 --- !u!114 &7069239235803778229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,3 +213,29 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   enemyAttributes: {fileID: 11400000, guid: c5e3a37c42b864a28a806d250b2513c0, type: 2}
   currentHealth: 0
+--- !u!114 &5929232991639771286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246058445603208886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01bcdda76a1a0c845a59d3ad6671b613, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  followLogic: {fileID: 4945190635543902863}
+--- !u!114 &7351130612927955779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246058445603208886}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f0026b5c69ab9445837716eafc76ce0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  id: rojo

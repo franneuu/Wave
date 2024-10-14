@@ -7,9 +7,5 @@ using UnityEngine.Rendering;
 public class EnemyRed : Enemy
 {
     [SerializeField] private string id;
-    public override string Id => id;
-    public override void Attack()
-    {       
-        Debug.Log("Ataque");
-    }  
+    public override string Id => id; 
 }
