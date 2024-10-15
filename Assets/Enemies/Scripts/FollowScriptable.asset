@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c589e661e0d3564bae1e468e765a080, type: 3}
   m_Name: FollowScriptable
   m_EditorClassIdentifier: 
-  speed: 1
+  speed: 1.3
   minRange: 0.7

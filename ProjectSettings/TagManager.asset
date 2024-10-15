@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Bullet
   - Enemy
+  - Decoraciones
+  - Helipuerto
   layers:
   - Default
   - TransparentFX
@@ -17,9 +19,9 @@ TagManager:
   - Decoraciones
   - Player
   - techos
-  - 
-  - 
-  - 
+  - Bala
+  - Helicoptero
+  - Enemy
   - 
   - 
   - 

@@ -8,13 +8,20 @@ public class EnemyHealth : MonoBehaviour
     public int currentHealth;
     private bool flashActive;
     private SpriteRenderer enemySprite;
+    [SerializeField] EnemyHealthBar healthBar;
 
     // Start is called before the first frame update
     void Awake()
     {
-        currentHealth = enemyAttributes.maxHealth;
         enemySprite = GetComponent<SpriteRenderer>();
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
     }
+    private void Start()
+    {
+        currentHealth = enemyAttributes.maxHealth;
+        healthBar.UpdateHealthBar(currentHealth, enemyAttributes.maxHealth);
+    }
+
     void Update()
     {
         if (flashActive)
@@ -59,6 +66,7 @@ public class EnemyHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.UpdateHealthBar(currentHealth, enemyAttributes.maxHealth);
         flashActive = true;
         enemyAttributes.flashCounter = enemyAttributes.flashLength;
 
@@ -69,6 +77,7 @@ public class EnemyHealth : MonoBehaviour
     }
     void Die()
     {
+        GameManager.instance.levelController.enemiesKilled++;
         Destroy(gameObject);
         //Debug.Log("Enemy died! " + currentHealth);
     }

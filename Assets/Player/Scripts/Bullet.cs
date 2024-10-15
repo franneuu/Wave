@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
     }
     private void OnEnable()
     {
-        Invoke("Deactivate", 3);
+        Invoke("Deactivate", 2.25f);
     }
     private void Deactivate()
     {
@@ -52,6 +52,11 @@ public class Bullet : MonoBehaviour
                 CancelInvoke("Deactivate");
                 Deactivate();
             }
+        }
+        else if (collision.gameObject.tag == "Decoraciones")
+        {
+            CancelInvoke("Deactivate");
+            Deactivate();
         }
     }    
 }

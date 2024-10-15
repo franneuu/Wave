@@ -9,11 +9,18 @@ public class HelicopterHealth : MonoBehaviour
     private bool flashActive;
     [SerializeField] public float flashLength;
     [SerializeField] public float flashCounter;
+    [SerializeField] EnemyHealthBar healthBar;
     private SpriteRenderer choperSprite;
+    public bool chopperDead = false;
     void Awake()
     {
         currentHealth = maxHealth;
         choperSprite = GetComponent<SpriteRenderer>();
+        healthBar = GetComponentInChildren<EnemyHealthBar>();
+    }
+    private void Start()
+    {
+        healthBar.UpdateHealthBar(currentHealth, maxHealth);
     }
     void Update()
     {
@@ -59,6 +66,7 @@ public class HelicopterHealth : MonoBehaviour
     public void TakeDamage(int damage)
     {
         currentHealth -= damage;
+        healthBar.UpdateHealthBar(currentHealth, maxHealth);
         flashActive = true;
         flashCounter = flashLength;
 
@@ -70,6 +78,6 @@ public class HelicopterHealth : MonoBehaviour
     void Die()
     {
         Destroy(gameObject);
-        Debug.Log("Ganaste");
+        chopperDead = true;
     }
 }

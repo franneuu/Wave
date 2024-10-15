@@ -72,6 +72,7 @@ public class PlayerHealth : MonoBehaviour
     }
     void Die()
     {
+        GameManager.instance.levelController.LoseGame();
         Destroy(gameObject);
         Debug.Log("Player died!");
     }

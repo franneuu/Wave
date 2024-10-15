@@ -23,11 +23,13 @@ public class AbstractFactory : MonoBehaviour
             {
                 SpawnRed();
                 spawnedEnemies++;
+                GameManager.instance.levelController.enemiesSpawned++;
             }
             else
             {
                 SpawnBlue();
                 spawnedEnemies++;
+                GameManager.instance.levelController.enemiesSpawned++;
             }
         }
         else if (spawnedEnemies > maxEnemies)

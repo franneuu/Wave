@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public PlayerController player;
     public EnemyController enemy;
     public PlayerHealth playerHealth;
+    public LevelController levelController;
     void Awake()
     {
         if (instance == null)
@@ -22,5 +23,6 @@ public class GameManager : MonoBehaviour
         player = FindObjectOfType<PlayerController>();
         enemy = FindObjectOfType<EnemyController>();
         playerHealth = FindObjectOfType<PlayerHealth>();
+        levelController = FindObjectOfType<LevelController>();
     }
 }
