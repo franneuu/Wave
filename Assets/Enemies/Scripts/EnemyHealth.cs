@@ -79,7 +79,5 @@ public class EnemyHealth : MonoBehaviour
     {
         GameManager.instance.levelController.enemiesKilled++;
         Destroy(gameObject);
-        //Debug.Log("Enemy died! " + currentHealth);
     }
 }
-

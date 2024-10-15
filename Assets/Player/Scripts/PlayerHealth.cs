@@ -11,6 +11,7 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float flashLength = 0f;
     [SerializeField] private float flashCounter = 0f;
     private SpriteRenderer playerSprite;
+    private bool isDead = false;
  
     private void Start()
     {
@@ -65,8 +66,9 @@ public class PlayerHealth : MonoBehaviour
         flashActive = true;
         flashCounter = flashLength;
 
-        if (currentHealth <= 0)
+        if (currentHealth <= 0 && isDead == false)
         {
+            isDead = true;
             Die();
         }
     }
